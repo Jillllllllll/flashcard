@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>中高階英文單字 · 1000 選擇題</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="head">
+        <div>
+          <h1>中高階英文單字</h1>
+          <p class="tagline">1,000 詞 · 選擇正確英文解釋（純前端）</p>
+        </div>
+        <div class="modes" role="group" aria-label="出題模式">
+          <button type="button" id="btn-random" class="mode is-on" aria-pressed="true">
+            隨機
+          </button>
+          <button type="button" id="btn-seq" class="mode" aria-pressed="false">依序</button>
+        </div>
+      </header>
+
+      <section class="stats" aria-live="polite">
+        <span>詞庫 <strong id="n-total">—</strong></span>
+        <span>答對 <strong id="n-ok">0</strong> / <span id="n-all">0</span>（<span id="n-pct">—</span>）</span>
+        <span>連對 <strong id="n-streak">0</strong> · 最佳 <strong id="n-best">0</strong></span>
+      </section>
+
+      <main class="card" aria-labelledby="word-title">
+        <p class="eyebrow">Word</p>
+        <h2 id="word-title" class="word">&nbsp;</h2>
+        <p id="word-pos" class="pos" hidden></p>
+        <p class="hint">快捷鍵：1–4 選答案 · 揭曉後 Enter 下一題</p>
+      </main>
+
+      <ol class="choices" id="choices"></ol>
+
+      <div class="actions">
+        <button type="button" id="btn-next" class="primary" hidden>下一題</button>
+        <button type="button" id="btn-skip" class="ghost">跳過此題</button>
+      </div>
+
+      <footer class="foot">
+        釋義來源：公眾領域 OPTED / Webster（1913）匯編，僅供學習。本站不使用框架與資料庫，僅 HTML/CSS/JS。
+      </footer>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
